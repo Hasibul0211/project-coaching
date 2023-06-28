@@ -1,0 +1,46 @@
+.searchBox {
+    height: 30px;
+    width: 220px;
+    border: 1px solid #002B5B;
+}
+
+.searchBoxBtn {
+    height: 30px;
+    background-color: #002B5B;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.detailsHeader {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    border: 1px solid #002B5B;
+    text-align: center;
+    grid-gap: 5px;
+    margin-top: 5px;
+    background-color: #002B5B;
+    color: white;
+    padding: 3px;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.detailsBody {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    text-align: center;
+    grid-gap: 5px;
+    margin-top: 5px;
+    background-color: antiquewhite;
+    color: black;
+    font-weight: bold;
+    padding: 3px;
+    font-size: 13px;
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

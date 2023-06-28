@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (min-width:560px) {
+
+
+    .addForm {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* .addForm div {
+    width: 49%;
+    padding: 5px;
+} */
+
+    .labelName {
+        font-size: 16px;
+    }
+
+    .labelInput {
+        height: '20px'
+    }
+
+    .formLeft {
+        margin: 2px;
+        border-right: 1px solid black;
+    }
+
+    .formRight {
+        border-left: 1px solid black;
+        margin: 2px;
+        padding: 5px;
+    }
+
+    .formLevelInputCont {
+        display: inline;
+    }
+
+}
+
+
+
+
+@media screen and (Max-width:560px) {
+    .addForm {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    .formHeader {
+        text-align: center;
+        color: orange;
+        font-size: 19px;
+        font-weight: bold;
+        text-transform: capitalize;
+        text-decoration: underline;
+    }
+
+    .labelName {
+        font-size: 18px;
+        display: block;
+
+    }
+
+    .labelInput {
+        height: 31px;
+        width: 100%;
+        margin-bottom: 1%;
+    }
+
+    .formLevelInputCont {
+        width: 100%;
+
+
+    }
+
+    .formLeft {
+
+        margin: 0;
+    }
+
+    .inputGroup {
+        flex-direction: column;
+    }
+
+    .inputGroup div input {
+        width: 92%;
+        height: 31px;
+    }
+
+    .clgGroup div input {
+        width: 83%;
+        height: 31px;
+    }
+
+    button {
+        width: 50%;
+    }
+
+}

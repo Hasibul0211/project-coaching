@@ -1,0 +1,59 @@
+.pay-student-id-query-contain {
+    width: 80%;
+    margin: 2% auto;
+    text-align: center;
+}
+
+.pay-student-id-query {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.pay-student-id-query input {
+    height: 30px;
+}
+
+.pay-student-id-query-contain button {
+    width: 200px;
+    height: 40px;
+    background-color: tomato;
+    border: none;
+    border-radius: 5px;
+    color: rgb(24, 1, 1);
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.query-output-data {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.get-stu-details-by-query {
+    border: 1px solid;
+    width: 70%;
+}
+
+.get-stu-details-by-query p {
+    background-color: beige;
+    padding: 5px;
+    margin: 0;
+    border: 1px solid;
+    color: black;
+
+}
+
+.query-out-payment-info {
+    border: 1px solid;
+    text-align: center;
+    background-color: #E1AEFF;
+}
+
+.query-out-payment-info p {
+    margin: 0;
+}

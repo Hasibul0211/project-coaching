@@ -1,0 +1,30 @@
+.deshboardFirst {
+    margin-top: 4%;
+    padding: 2%;
+    box-shadow: 1px 1px 1px 1px rgb(216, 172, 172);
+    background-color: #ECF0F5;
+    border-radius: 5px;
+    border-top: 5px solid rgb(25, 54, 21);
+}
+
+
+
+
+@media screen and (min-width:480px) {
+
+    .deshboardFirst {
+        width: 100%;
+        padding: 2px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+
+    .css-yfo96e {
+        padding: 0;
+    }
+
+    .css-zxdg2z {
+        padding: 0;
+    }
+}
