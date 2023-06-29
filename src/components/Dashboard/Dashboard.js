@@ -264,12 +264,9 @@ const Dashboard = () => {
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="/" style={{ fontSize: '16px' }}>Previous Record</a><br />
+                                <a href="pastrecord" style={{ fontSize: '16px' }}>Previous Record</a><br />
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="/" style={{ fontSize: '16px' }}>Individual Earn</a><br />
-                            </div>
+
                         </AccordionDetails>
                     </Accordion>
                 </div>

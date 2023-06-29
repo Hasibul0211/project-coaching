@@ -11,6 +11,7 @@ import PastFees from "./components/PastFees/PastFees";
 import AddFees from "./components/AddFees/AddFees";
 import RunningRecord from "./components/RunningRecord/RunningRecord";
 import DebitCredit from "./components/DebitCredit/DebitCredit";
+import PastRecord from "./components/PastRecord/PastRecord";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="addfees" element={<AddFees></AddFees>}></Route>
         <Route path="totalearn" element={<RunningRecord></RunningRecord>}></Route>
         <Route path="debitcredit" element={<DebitCredit></DebitCredit>}></Route>
+        <Route path="pastrecord" element={<PastRecord></PastRecord>}></Route>
 
       </Route>
       <Route path="/details" element={<ViewDetails></ViewDetails>}></Route>

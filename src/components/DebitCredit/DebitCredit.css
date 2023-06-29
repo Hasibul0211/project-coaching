@@ -1,0 +1,33 @@
+.data-sheet-head {
+    display: grid;
+    grid-template-columns: 15% 29% 14% 14% 14% 14%;
+    width: 100%;
+    margin: 2px auto;
+    background-color: #002B5B;
+}
+
+.data-sheet-head p {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    border: 1px solid;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.data-sheet-data {
+    display: grid;
+    grid-template-columns: 15% 29% 14% 14% 14% 14%;
+    width: 100%;
+    margin: 2px auto;
+    background-color: #FAEBD7;
+}
+
+.data-sheet-data p {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    padding: 3px;
+    font-size: 13px;
+}
