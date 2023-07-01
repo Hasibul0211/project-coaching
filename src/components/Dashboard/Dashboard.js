@@ -287,12 +287,12 @@ const Dashboard = () => {
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <Link to='add-Student'>Teacher's Details</Link>
+                                <Link to='teacherdetails'>Teacher's Details</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="/" style={{ fontSize: '16px' }}>Add Teacher</a><br />
+                                <a href="addteacher" style={{ fontSize: '16px' }}>Add Teacher</a><br />
                             </div>
                         </AccordionDetails>
                     </Accordion>
@@ -314,12 +314,12 @@ const Dashboard = () => {
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <Link to='add-Student'>Author's Details</Link>
+                                <Link to='authordetail'>Author's Details</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="/" style={{ fontSize: '16px' }}>Add Author</a><br />
+                                <a href="addauthor" style={{ fontSize: '16px' }}>Add Author</a><br />
                             </div>
                         </AccordionDetails>
                     </Accordion>

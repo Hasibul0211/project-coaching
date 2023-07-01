@@ -12,6 +12,10 @@ import AddFees from "./components/AddFees/AddFees";
 import RunningRecord from "./components/RunningRecord/RunningRecord";
 import DebitCredit from "./components/DebitCredit/DebitCredit";
 import PastRecord from "./components/PastRecord/PastRecord";
+import TeacherDetails from "./components/TeacherDetails/TeacherDetails";
+import AddTeacher from "./components/AddTeacher/AddTeacher";
+import AuthorDetails from "./components/AuthorDetails/AuthorDetails";
+import AddAuthor from "./components/AddAuthor/AddAuthor";
 
 
 function App() {
@@ -29,6 +33,10 @@ function App() {
         <Route path="totalearn" element={<RunningRecord></RunningRecord>}></Route>
         <Route path="debitcredit" element={<DebitCredit></DebitCredit>}></Route>
         <Route path="pastrecord" element={<PastRecord></PastRecord>}></Route>
+        <Route path="teacherdetails" element={<TeacherDetails></TeacherDetails>}></Route>
+        <Route path="addteacher" element={<AddTeacher></AddTeacher>}></Route>
+        <Route path="authordetail" element={<AuthorDetails></AuthorDetails>}></Route>
+        <Route path="addauthor" element={<AddAuthor></AddAuthor>}></Route>
 
       </Route>
       <Route path="/details" element={<ViewDetails></ViewDetails>}></Route>
