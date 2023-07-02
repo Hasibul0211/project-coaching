@@ -25,6 +25,7 @@
     font-weight: 700;
     font-size: 18px;
     cursor: pointer;
+    font-family: cursive;
 }
 
 .query-output-data {
@@ -35,15 +36,17 @@
 }
 
 .get-stu-details-by-query {
-    border: 1px solid;
+    padding: 10px;
     width: 70%;
+    box-shadow: 1px 1px 1px 1px black;
+    border-radius: 5px;
 }
 
 .get-stu-details-by-query p {
-    background-color: beige;
+    font-family: cursive;
     padding: 5px;
     margin: 0;
-    border: 1px solid;
+
     color: black;
 
 }
@@ -51,9 +54,20 @@
 .query-out-payment-info {
     border: 1px solid;
     text-align: center;
-    background-color: #E1AEFF;
+    background-color: #F5F5F5;
+    box-shadow: 1px 1px 1px 1px black;
+    border-radius: 5px;
 }
 
 .query-out-payment-info p {
     margin: 0;
+    font-family: cursive;
+}
+
+.proccedBtn {
+    background-color: tomato;
+    padding: 5px;
+    margin: 8px;
+    font-weight: bold;
+    border-radius: 5px;
 }

@@ -58,8 +58,8 @@ const RunningEarning = () => {
             <section>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <p>Teacher's Payment</p>
-                    <button style={{ height: '30px', marginTop: '2%' }} onClick={handleOpen}>Make Payment</button>
+                    <p style={{ fontFamily: "cursive", fontWeight: 'bold' }}>Teacher's Payment</p>
+                    <button style={{ height: '35px', marginTop: '2%', backgroundColor: 'tomato', border: '0', padding: '5px', fontFamily: "cursive", fontWeight: 'bold', borderRadius: '5px', cursor: 'pointer' }} onClick={handleOpen}>Make Payment</button>
                 </div>
 
                 <Modal
@@ -162,8 +162,8 @@ const RunningEarning = () => {
             <hr />
             <section>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <p>Founding Member Profit</p>
-                    <button style={{ height: '30px', marginTop: '2%' }} onClick={handleOpenTwo}>Withdrawal</button>
+                    <p style={{ fontFamily: 'cursive', fontWeight: 'bold' }}>Founding Member Profit</p>
+                    <button style={{ height: '35px', marginTop: '2%', backgroundColor: 'tomato', border: '0', padding: '5px', fontFamily: "cursive", fontWeight: 'bold', borderRadius: '5px', cursor: 'pointer' }} onClick={handleOpenTwo}>Withdrawal</button>
                 </div>
                 <Modal
                     open={openTwo}
@@ -227,39 +227,39 @@ const RunningEarning = () => {
 
                 <div className='earning-founding-person'>
                     <div className='earing-founding-person-part'>
-                        <p style={{ fontSize: '20px', fontWeight: 'bold' }}>Hasibul Hasan</p>
-                        <p style={{ margin: '0' }}>Amount: 5000</p>
-                        <p style={{ margin: '0' }}>Withdraw: 00</p>
-                        <p style={{ margin: '0' }}>Return: 00</p>
-                        <p style={{ margin: '0' }}>Balance: 00</p>
+                        <p style={{ fontSize: '20px', fontWeight: 'bold', fontFamily: 'cursive' }}>Hasibul Hasan</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Amount: 5000</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Withdraw: 00</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Return: 00</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Balance: 00</p>
 
                         <hr />
 
-                        <p style={{ margin: '0', fontSize: '20px', fontWeight: 'bold' }}>Total Balance: 00</p>
+                        <p style={{ margin: '5px', fontSize: '20px', fontWeight: 'bold', fontFamily: 'cursive' }}>Total Balance: 00</p>
 
 
 
                     </div>
                     <div className='earing-founding-person-part'>
-                        <p style={{ fontSize: '20px', fontWeight: 'bold' }}>Nahid Uddin</p>
-                        <p style={{ margin: '0' }}>Amount: 5000</p>
-                        <p style={{ margin: '0' }}>Withdraw: 00</p>
-                        <p style={{ margin: '0' }}>Return: 00</p>
-                        <p style={{ margin: '0' }}>Balance: 00</p>
+                        <p style={{ fontSize: '20px', fontWeight: 'bold', fontFamily: 'cursive' }}>Nahid Uddin</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Amount: 5000</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Withdraw: 00</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Return: 00</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Balance: 00</p>
 
                         <hr />
 
-                        <p style={{ margin: '0', fontSize: '20px', fontWeight: 'bold' }}>Total Balance: 00</p>
+                        <p style={{ margin: '5px', fontSize: '20px', fontWeight: 'bold', fontFamily: 'cursive' }}>Total Balance: 00</p>
                     </div>
                     <div className='earing-founding-person-part'>
-                        <p style={{ fontSize: '20px', fontWeight: 'bold' }}>Mehedi Hasan</p>
-                        <p style={{ margin: '0' }}>Amount: 5000</p>
-                        <p style={{ margin: '0' }}>Withdraw: 00</p>
-                        <p style={{ margin: '0' }}>Return: 00</p>
-                        <p style={{ margin: '0' }}>Balance: 00</p>
+                        <p style={{ fontSize: '20px', fontWeight: 'bold', fontFamily: 'cursive' }}>Mehedi Hasan</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Amount: 5000</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Withdraw: 00</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Return: 00</p>
+                        <p style={{ margin: '0', fontFamily: 'cursive' }}>Balance: 00</p>
                         <hr />
 
-                        <p style={{ margin: '0', fontSize: '20px', fontWeight: 'bold' }}>Total: 00</p>
+                        <p style={{ margin: '5px', fontSize: '20px', fontWeight: 'bold', fontFamily: 'cursive' }}>Total Balance: 00</p>
                     </div>
 
                 </div>

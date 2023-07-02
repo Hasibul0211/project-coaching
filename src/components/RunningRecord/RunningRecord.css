@@ -6,23 +6,29 @@
 
 .profit-calculate-sec-part {
     text-align: center;
-    border: 1px solid;
     width: 30%;
     border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px black;
+    background-color: #1B6B93;
+    color: white;
+    font-family: cursive;
 }
 
 .earning-teacher-payment {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 5px;
+    grid-gap: 15px;
 
 }
 
 .earning-teacher-payment-part {
-    border: 1px solid;
     border-radius: 5px;
     padding: 5px;
     font-size: 15px;
+    box-shadow: 1px 1px 1px 1px black;
+    font-family: cursive;
+    font-weight: bold;
+    background-color: #64CCC5;
 
 }
 
@@ -32,8 +38,9 @@
 }
 
 .earing-founding-person-part {
-    border: 1px solid;
+
     width: 30%;
     border-radius: 5px;
     padding-left: 2%;
+    box-shadow: 1px 1px 10px 1px black;
 }

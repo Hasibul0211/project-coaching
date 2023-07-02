@@ -15,7 +15,7 @@ const PastFees = () => {
     return (
         <section>
             <br />
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'cursive' }}>
                 <select name="" id="monthSelect" onChange={selectMonth}>
                     <option value="January">January</option>
                     <option value="February">February</option>

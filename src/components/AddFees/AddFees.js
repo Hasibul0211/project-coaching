@@ -31,8 +31,8 @@ const AddFees = () => {
         <div>
             <section className='pay-student-id-query-contain'>
                 <div className='pay-student-id-query'>
-                    <p>Insert Student ID:</p>
-                    <input type="number" onChange={queryInput} />
+                    <p style={{ fontFamily: 'cursive', fontWeight: 'bold' }}>Insert Student ID:</p>
+                    <input type="number" onChange={queryInput} style={{ fontFamily: 'cursive' }} />
                 </div>
                 <button onClick={findQueryData}>Click to Find</button>
             </section>
@@ -42,7 +42,7 @@ const AddFees = () => {
                         dataShow ?
                             <div>
                                 <div >
-                                    <p style={{ fontWeight: 'bold', margin: '0' }}>Query Details By ID</p>
+                                    <p style={{ fontWeight: 'bold', margin: '0', fontFamily: 'cursive' }}>Query Details By ID</p>
                                     <div className='get-stu-details-by-query'>
                                         <p>Student Id: 0920754666</p>
                                         <p>Name: Md Hasibul Hasan</p>
@@ -65,19 +65,20 @@ const AddFees = () => {
                     {
                         dataShow ?
                             <div className='query-out-payment-info'>
-                                <p>Payment Summary</p><hr /><hr />
+                                <p style={{ fontWeight: 'bold' }}>Payment Summary</p><hr /><hr />
                                 <div>
-                                    <p>Month Name: July</p>
-                                    <p>Amount: 2000</p>
+                                    <p>Name: <strong>Hasibul Hasan</strong> </p>
+                                    <p>Month Name: <strong>July</strong></p>
+                                    <p>Amount: <strong>2000</strong></p>
                                 </div>
                                 <div onClick={proccedBtn} style={{ cursor: 'pointer' }} className='proccedBtn'>
 
 
 
                                     {
-                                        procc ? <p style={{ backgroundColor: "rgb(71, 114, 255)", padding: '8px', fontWeight: 'bold' }}>Done</p>
+                                        procc ? <p>Done</p>
                                             :
-                                            <p style={{ backgroundColor: "rgb(71, 114, 255)", padding: '8px', fontWeight: 'bold' }}>Procced</p>
+                                            <p>Procced</p>
                                     }
 
                                 </div>

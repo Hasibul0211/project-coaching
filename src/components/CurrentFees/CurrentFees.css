@@ -1,10 +1,12 @@
 .exprtBtn {
     background-color: tomato;
     border: none;
-    color: white;
-    padding: 8px;
+    color: black;
+    padding: 6px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: cursive;
+    font-weight: 700;
 
 }
 
@@ -23,6 +25,7 @@
     color: white;
     padding: 5px;
     font-weight: 500;
+    font-family: cursive;
 }
 
 .feesData {
@@ -37,7 +40,8 @@
     margin: 0;
     text-align: center;
     font-size: 13px;
-
+    font-family: cursive;
     padding: 5px;
+    font-weight: 600;
 
 }
