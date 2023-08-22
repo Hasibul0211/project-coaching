@@ -16,6 +16,8 @@ import TeacherDetails from "./components/TeacherDetails/TeacherDetails";
 import AddTeacher from "./components/AddTeacher/AddTeacher";
 import AuthorDetails from "./components/AuthorDetails/AuthorDetails";
 import AddAuthor from "./components/AddAuthor/AddAuthor";
+import Books from "./components/Books/Books";
+import LectureSheet from "./components/LectureSheet/LectureSheet";
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
         <Route path="addteacher" element={<AddTeacher></AddTeacher>}></Route>
         <Route path="authordetail" element={<AuthorDetails></AuthorDetails>}></Route>
         <Route path="addauthor" element={<AddAuthor></AddAuthor>}></Route>
+        <Route path="books" element={<Books></Books>}></Route>
+        <Route path="sheet" element={<LectureSheet></LectureSheet>}></Route>
 
       </Route>
       <Route path="/details" element={<ViewDetails></ViewDetails>}></Route>

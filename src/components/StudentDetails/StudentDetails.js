@@ -46,7 +46,7 @@ const StudentDetails = () => {
 
     return (
         <div>
-            <section style={{ marginTop: '15px' }}>
+            <section style={{ marginTop: '15px' }} className='searchSec'>
                 <input type="text/number" placeholder='Write student Id or Name' className='searchBox' />
                 <button type='submit' className='searchBoxBtn'>Search</button>
             </section>
@@ -82,14 +82,16 @@ const StudentDetails = () => {
                 <div>
                     01626205938
                 </div>
-                <div>
-                    <button>
+
+                <div className='pftbtns1'>
+                    <button >
                         <Link to="/details" style={{ textDecoration: 'none', color: 'black' }}>View</Link>
                     </button>
                 </div>
-                <div>
+                <div className='pftbtns1'>
                     <button onClick={deleteBtn}>Delete</button>
                 </div>
+
 
             </section>
             <section className='detailsBody'>
@@ -105,12 +107,16 @@ const StudentDetails = () => {
                 <div>
                     01626205938
                 </div>
-                <div>
-                    <button>View</button>
+
+                <div className='pftbtns1'>
+                    <button >
+                        <Link to="/details" style={{ textDecoration: 'none', color: 'black' }}>View</Link>
+                    </button>
                 </div>
-                <div>
+                <div className='pftbtns1'>
                     <button onClick={deleteBtn}>Delete</button>
                 </div>
+
 
             </section>
             <section className='detailsBody'>

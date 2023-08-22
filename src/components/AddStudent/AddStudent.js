@@ -33,12 +33,12 @@ const AddStudent = () => {
                         <div className='formLeft'>
                             <div style={{ width: '100%' }} className='formLevelInputCont'>
                                 <label htmlFor="" className='labelName'>Student Name</label>
-                                <input type="text" style={{ width: '92%' }} className='labelInput' />
+                                <input type="text" style={{ width: '100%' }} className='labelInput' />
                             </div>
                             <div className='inputGroup' style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                                 <div>
                                     <label htmlFor="" className='labelName'>Father's Name</label>
-                                    <input type="text" />
+                                    <input type="text" className='labelInput' />
                                 </div>
                                 <div>
                                     <label htmlFor="" className='labelName'>Father's Mobile no</label>
@@ -81,7 +81,7 @@ const AddStudent = () => {
 
                             <div style={{ width: '100%' }}>
                                 <label htmlFor="" className='labelName'>Institution Name</label>
-                                <input className='labelInput' type="text" style={{ width: '92%' }} />
+                                <input className='labelInput' type="text" style={{ width: '100%' }} />
                             </div>
                             <div style={{ width: '100%' }}>
                                 <label htmlFor="" className='labelName'>Address</label>

@@ -1,40 +1,20 @@
 import React, { useState } from 'react';
 import './OverView.css'
 import DashboarFirst from './ExtraDesign/DashboardFirstSec/DashboarFirst';
+import DashboardSecond from './ExtraDesign/DashboardFirstSec/DashboradSecond/DashboardSecond';
 
 const OverView = () => {
-    const [img, setImg] = useState('')
 
 
-    const convertImage = (e) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(e.target.files[0]);
-        reader.onload = () => {
-            setImg(reader.result);
-        }
 
-        reader.onerror = (error) => {
-            console.log("error", error);
-        }
-        console.log(e);
-    }
 
     return (
         <div>
             <section className='deshboardFirst'>
                 <DashboarFirst></DashboarFirst>
             </section>
-            <section>
-                <p>upload image here</p>
-
-                <input
-                    accept='image/'
-                    type="file"
-                    onChange={convertImage}
-                />
-
-
-                <img src={img} alt="" />
+            <section className='deshboardFirst'>
+                <DashboardSecond></DashboardSecond>
             </section>
         </div>
     );

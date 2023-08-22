@@ -108,21 +108,21 @@ const Dashboard = () => {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open} style={{ backgroundColor: '#002B5B' }}>
-                <Toolbar>
+                <Toolbar className='incnlk'>
                     <IconButton
-                        color="black"
+                        backgroundColor="white"
                         aria-label="open drawer"
                         onClick={handleDrawerOpen}
                         edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                        sx={{ mr: 2, ...(open && { display: 'none', backgroundColor: "white", color: 'white' }) }}
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Box style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+                    <Box style={{ width: '80%', display: 'flex', justifyContent: 'space-between' }} className="dashhead">
                         <Typography variant="h6" noWrap component="div">
                             Borno Academic Care
                         </Typography>
-                        <Box sx={{ flexGrow: 0 }}>
+                        {/* <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                     <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -150,7 +150,7 @@ const Dashboard = () => {
                                     </MenuItem>
                                 ))}
                             </Menu>
-                        </Box>
+                        </Box> */}
                     </Box>
                 </Toolbar>
             </AppBar>
@@ -324,7 +324,7 @@ const Dashboard = () => {
                         </AccordionDetails>
                     </Accordion>
                 </div>
-                <div>
+                {/* <div>
                     <Accordion id='accordionCustom'>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon style={{ color: 'white', fontSize: '15px' }} />}
@@ -355,7 +355,7 @@ const Dashboard = () => {
                             </div>
                         </AccordionDetails>
                     </Accordion>
-                </div>
+                </div> */}
                 <div>
                     <Accordion id='accordionCustom'>
                         <AccordionSummary
@@ -373,12 +373,12 @@ const Dashboard = () => {
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <Link to='add-Student'>Books</Link>
+                                <Link to='books'>Books</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="/" style={{ fontSize: '16px' }}>Lecture Sheet</a><br />
+                                <a href="sheet" style={{ fontSize: '16px' }}>Lecture Sheet</a><br />
                             </div>
 
                         </AccordionDetails>
