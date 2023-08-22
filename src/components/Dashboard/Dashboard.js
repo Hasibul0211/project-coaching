@@ -1,6 +1,6 @@
 import * as React from 'react';
 import "./Dashboard.css"
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -22,9 +22,9 @@ import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import GroupsIcon from '@mui/icons-material/Groups';
-import SchoolIcon from '@mui/icons-material/School';
+
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
-import { Avatar, Menu, MenuItem, Tooltip } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const drawerWidth = 240;
 
@@ -100,9 +100,11 @@ const Dashboard = () => {
         setAnchorElUser(null);
     };
 
-
-
-
+    //logout page button
+    const logout = useNavigate()
+    const logOutBtn = () => {
+        logout('/')
+    }
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -177,7 +179,7 @@ const Dashboard = () => {
 
                 <div className='dashboardDiv'>
                     <DashboardIcon style={{ fontSize: '17px', marginRight: '10px', color: 'white' }}></DashboardIcon>
-                    <Link to='/' style={{ color: 'white' }}>Dashboard</Link>
+                    <Link to='/dashboard/overview' style={{ color: 'white' }}>Dashboard</Link>
                 </div>
                 <div>
                     <Accordion id='accordionCustom'>
@@ -384,14 +386,19 @@ const Dashboard = () => {
                         </AccordionDetails>
                     </Accordion>
                 </div>
-
+                <div className='dashboardDiv' onClick={logOutBtn}>
+                    <LogoutIcon style={{ fontSize: '17px', marginRight: '10px', color: 'white' }}></LogoutIcon>
+                    <Link to='/dashboard/overview' style={{ color: 'white' }}>Logout</Link>
+                </div>
 
             </Drawer>
             <Main open={open}>
                 {/* <DrawerHeader /> */}
                 <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 
-                    <Outlet></Outlet>
+                    <Outlet>
+
+                    </Outlet>
 
 
                 </Box>

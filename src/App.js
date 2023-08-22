@@ -18,15 +18,20 @@ import AuthorDetails from "./components/AuthorDetails/AuthorDetails";
 import AddAuthor from "./components/AddAuthor/AddAuthor";
 import Books from "./components/Books/Books";
 import LectureSheet from "./components/LectureSheet/LectureSheet";
+import Login from "./components/LoginPage/Login";
+import DashboarFirst from "./components/OverView/ExtraDesign/DashboardFirstSec/DashboarFirst";
 
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard></Dashboard>}></Route>
+      <Route path="/" element={<Login></Login>}></Route>
+
       <Route path="/upload" element={<UploadImage></UploadImage>}></Route>
-      <Route path="/" element={<Dashboard></Dashboard>}>
-        <Route index element={<OverView />}></Route>
+      <Route path="dashboard/" element={<Dashboard />}>
+
+        <Route path="overview" index element={<OverView />}></Route>
+        <Route path="overview" element={<OverView />}></Route>
         <Route path="add-Student" element={<AddStudent></AddStudent>}></Route>
         <Route path="student-details" element={<StudentDetails></StudentDetails>}></Route>
         <Route path="currentfees" element={<CurrentFees></CurrentFees>}></Route>
