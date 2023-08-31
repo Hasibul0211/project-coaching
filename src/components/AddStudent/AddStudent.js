@@ -68,27 +68,27 @@ const AddStudent = () => {
 
     const addformSubmit = (e) => {
         const studentFormData = {
-            name: stuName,
-            fatherName: stuFather,
+            name: stuName.toUpperCase(),
+            fatherName: stuFather.toUpperCase(),
             fatherMobile: stuFatherMob,
-            motherName: stuMother,
+            motherName: stuMother.toUpperCase(),
             motherMobile: stuMotherMob,
-            class: stuClass,
+            class: stuClass.toUpperCase(),
             roll: stuRoll,
             dob: stuDob,
-            group: stuGroup,
-            institute: stuInstitue,
-            address: stuAddress,
-            refer: stuRefere,
+            group: stuGroup.toUpperCase(),
+            institute: stuInstitue.toUpperCase(),
+            address: stuAddress.toUpperCase(),
+            refer: stuRefere.toUpperCase(),
             jod: stuJoinDa,
             sId: stuId,
             fees: stuFees,
-            gName: stuGurdNa,
+            gName: stuGurdNa.toUpperCase(),
             gMob: stuGurdMob,
-            subject: stuSubject
+            subject: stuSubject.toUpperCase()
         }
 
-
+        console.log(studentFormData);
         fetch('https://projectcoachingbackenda.vercel.app/addStudent', {
             method: 'POST',
             headers: {
@@ -119,6 +119,7 @@ const AddStudent = () => {
 
 
         e.preventDefault()
+
     }
 
 

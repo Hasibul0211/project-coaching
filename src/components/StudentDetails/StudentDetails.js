@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './StudentDetails.css'
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,15 @@ import { Link } from 'react-router-dom';
 
 const StudentDetails = () => {
 
+    const [stuDet, setStuDet] = useState([])
 
+    useEffect(() => {
+        fetch('https://projectcoachingbackenda.vercel.app/addStudent')
+            .then(res => res.json())
+            .then(data => setStuDet(data))
+    }, [])
+
+    stuDet.map(da => console.log(da))
 
     const deleteBtn = () => {
 
@@ -69,7 +77,51 @@ const StudentDetails = () => {
                 <div>Delete</div>
 
             </section>
-            <section className='detailsBody'>
+
+            {
+                stuDet.map(da => <section className='detailsBody'>
+                    <div>
+                        <p>
+                            {da.sId}
+                        </p>
+
+                    </div>
+                    <div>
+                        <p>
+                            {da.name}
+                        </p>
+
+                    </div>
+                    <div>
+                        <p>
+                            {da.group}
+                        </p>
+
+                    </div>
+                    <div>
+                        <div>
+                            <p>
+                                {da.fatherMobile}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div className='pftbtns1'>
+                        <button style={{ borderRadius: '10px', border: 'none', padding: '5px', width: '60px', backgroundColor: 'green', cursor: 'pointer' }}>
+                            <Link to="/details" style={{ textDecoration: 'none', color: "white", fontFamily: 'cursive' }}>View</Link>
+                        </button>
+                    </div>
+                    <div className='pftbtns1'>
+                        <button onClick={deleteBtn} style={{ borderRadius: '10px', border: 'none', padding: '5px', width: '60px', backgroundColor: 'red', color: "white", fontFamily: 'cursive', cursor: 'pointer' }}>Delete</button>
+                    </div>
+
+
+                </section>)
+            }
+
+            {/* <section className='detailsBody'>
                 <div>
                     231205
                 </div>
@@ -412,7 +464,7 @@ const StudentDetails = () => {
                     <button onClick={deleteBtn}>Delete</button>
                 </div>
 
-            </section>
+            </section> */}
         </div>
     );
 };
