@@ -9,7 +9,7 @@ const StudentDetails = () => {
     const [stuDet, setStuDet] = useState([])
 
     useEffect(() => {
-        fetch('https://projectcoachingbackenda.vercel.app/addStudent')
+        fetch('https://projectcoachingbackend.vercel.app/addStudent')
             .then(res => res.json())
             .then(data => setStuDet(data))
     }, [])
