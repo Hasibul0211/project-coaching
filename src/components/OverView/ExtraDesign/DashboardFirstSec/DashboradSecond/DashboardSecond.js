@@ -18,35 +18,29 @@ const DashboardSecond = () => {
             <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 12, sm: 12, md: 12 }} p={1}>
 
                 <Grid item xs={12} sm={4} md={4} >
-                    <Item style={{ width: '100%', height: '100%', padding: "0" }} className='firstDashInner'>
-                        <div style={{ backgroundColor: 'white', margin: '0', padding: '5px' }}>
+                    <Item style={{ width: '100%', height: '100%', padding: "0" }} className='secondDashInner1'>
 
-                        </div>
-                        <div style={{ paddingLeft: '3%' }}>
-                            <p style={{ color: 'black', fontWeight: '800', fontSize: "18px", padding: '0', margin: '12px 0', fontFamily: 'cursive' }}>Total Earn</p>
-                            <p style={{ fontWeight: '900', color: 'black', margin: '10px 20%', fontSize: '20px', fontFamily: 'cursive' }}>75</p>
+                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 2%', fontSize: "16px", backgroundColor: '#252B48', borderRadius: '5px', color: "white" }}>
+                            <p style={{ fontFamily: 'cursive' }}>Total Earn</p>
+                            <p style={{ fontFamily: 'cursive', paddingRight: '5%' }}>BDT: 75000000 TK</p>
                         </div>
                     </Item>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4}>
-                    <Item style={{ width: '100%', height: '100%', padding: "0" }} className='firstDashInner'>
-                        <div style={{ backgroundColor: 'white', margin: '0', padding: '5px' }}>
+                    <Item style={{ width: '100%', height: '100%', padding: "0" }} className='secondDashInner1'>
 
-                        </div>
-                        <div style={{ paddingLeft: '3%' }}>
-                            <p style={{ color: 'black', fontWeight: '800', fontSize: "18px", padding: '0', margin: '12px 0', fontFamily: 'cursive' }}>Total Expenes</p>
-                            <p style={{ fontWeight: '900', color: 'black', margin: '10px 20%', fontSize: '20px', fontFamily: 'cursive' }}>12</p>
+                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 2%', fontSize: "16px", backgroundColor: '#6F61C0', borderRadius: '5px', color: "white" }}>
+                            <p style={{ fontFamily: 'cursive' }}>Total Expenes</p>
+                            <p style={{ fontFamily: 'cursive', paddingRight: '5%' }}>BDT: 1200000 TK</p>
                         </div>
                     </Item>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4}>
-                    <Item style={{ width: '100%', height: '100%', padding: "0" }} className='firstDashInner'>
-                        <div style={{ backgroundColor: 'white', margin: '0', padding: '5px' }}>
+                    <Item style={{ width: '100%', height: '100%', padding: "0" }} className='secondDashInner1'>
 
-                        </div>
-                        <div >
-                            <p style={{ color: 'black', fontWeight: '800', fontSize: "18px", padding: '0', margin: '12px 0', fontFamily: 'cursive' }}>Profit</p>
-                            <p style={{ fontWeight: '900', color: 'black', margin: '10px 20%', fontSize: '20px', fontFamily: 'cursive' }}>03</p>
+                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 2%', fontSize: "16px", backgroundColor: '#5C4B99', borderRadius: '5px', color: "white" }}>
+                            <p style={{ fontFamily: 'cursive' }}>Profit</p>
+                            <p style={{ fontFamily: 'cursive', paddingRight: '5%' }}>BDT: 0555553 TK</p>
                         </div>
                     </Item>
                 </Grid>

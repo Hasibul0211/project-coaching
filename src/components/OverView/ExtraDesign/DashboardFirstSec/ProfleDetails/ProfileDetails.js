@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import profile from "../../../../../photos/profile.jpg"
 
 const ProfileDetails = () => {
+
+    let { id } = useParams()
+    console.log(id);
 
     const [img, setImg] = useState(profile)
 
@@ -26,6 +30,8 @@ const ProfileDetails = () => {
 
     return (
         <div>
+
+            < h1 > your clik id id {id}</h1>
             <p className='profile'>Profile</p>
             <div className='profile-details'>
                 <div>

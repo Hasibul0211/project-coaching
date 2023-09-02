@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './StudentDetails.css'
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 const StudentDetails = () => {
@@ -9,10 +9,10 @@ const StudentDetails = () => {
     const [stuDet, setStuDet] = useState([])
 
     useEffect(() => {
-        fetch('https://projectcoachingbackend.vercel.app/addStudent')
+        fetch('https://projectcoachingbackenda.vercel.app/addStudent')
             .then(res => res.json())
             .then(data => setStuDet(data))
-    }, [])
+    }, [setStuDet])
 
     stuDet.map(da => console.log(da))
 
@@ -39,15 +39,6 @@ const StudentDetails = () => {
         })
 
     }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -110,7 +101,7 @@ const StudentDetails = () => {
 
                     <div className='pftbtns1'>
                         <button style={{ borderRadius: '10px', border: 'none', padding: '5px', width: '60px', backgroundColor: 'green', cursor: 'pointer' }}>
-                            <Link to="/details" style={{ textDecoration: 'none', color: "white", fontFamily: 'cursive' }}>View</Link>
+                            <Link to={da._id} style={{ textDecoration: 'none', color: "white", fontFamily: 'cursive' }}>View</Link>
                         </button>
                     </div>
                     <div className='pftbtns1'>

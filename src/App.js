@@ -34,6 +34,7 @@ function App() {
         <Route path="overview" element={<OverView />}></Route>
         <Route path="add-Student" element={<AddStudent></AddStudent>}></Route>
         <Route path="student-details" element={<StudentDetails></StudentDetails>}></Route>
+        <Route path="student-details/:id" element={<ViewDetails></ViewDetails>}></Route>
         <Route path="currentfees" element={<CurrentFees></CurrentFees>}></Route>
         <Route path="pastfees" element={<PastFees></PastFees>}></Route>
         <Route path="addfees" element={<AddFees></AddFees>}></Route>
@@ -48,7 +49,7 @@ function App() {
         <Route path="sheet" element={<LectureSheet></LectureSheet>}></Route>
 
       </Route>
-      <Route path="/details" element={<ViewDetails></ViewDetails>}></Route>
+      {/* <Route path="/details" element={<ViewDetails></ViewDetails>}></Route> */}
       <Route path="*" element={<Notfound></Notfound>}></Route>
     </Routes >
   );

@@ -13,7 +13,7 @@ const OverView = () => {
             <section className='deshboardFirst'>
                 <DashboarFirst></DashboarFirst>
             </section>
-            <section className='deshboardFirst'>
+            <section className='deshboardSecond'>
                 <DashboardSecond></DashboardSecond>
             </section>
         </div>

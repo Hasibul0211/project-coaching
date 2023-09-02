@@ -1,7 +1,8 @@
-.firstDashInner {
+.secondDashInner1 {
     display: grid;
     width: 100%;
-    grid-template-columns: 30% 70%;
+    height: 100px;
+
 }
 
 
