@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './StudentDetails.css'
 import Swal from 'sweetalert2';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const StudentDetails = () => {
@@ -9,7 +9,7 @@ const StudentDetails = () => {
     const [stuDet, setStuDet] = useState([])
 
     useEffect(() => {
-        fetch('https://projectcoachingbackenda.vercel.app/addStudent')
+        fetch('https://backendadmin.vercel.app/addStudent')
             .then(res => res.json())
             .then(data => setStuDet(data))
     }, [setStuDet])
