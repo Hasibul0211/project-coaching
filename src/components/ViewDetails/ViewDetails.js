@@ -62,8 +62,9 @@ const ViewDetails = () => {
     return (
         <div>
             <section className='details-container'>
-                <p style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '20px', marginTop: '5px' }}>Student Information</p>
-                <section className='profileSection' style={{ border: '1px solid rgb(129, 111, 66) ', borderRadius: '0 30px 0 0' }}>
+
+                <section className='profileSection'>
+
                     <ProfileDetails></ProfileDetails>
                 </section>
                 <section style={{ marginTop: '10px' }}>

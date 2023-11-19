@@ -1,28 +1,28 @@
 .details-container {
-    width: 85%;
-    margin: 5px auto;
-    background-color: aliceblue;
+    width: 100%;
+    margin: 2% auto;
+
 }
 
 .profile {
     background-color: rgb(129, 111, 66);
     padding: 5px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 0 30px 0 0;
+    font-family: cursive;
+
     margin: 0;
 }
 
 .profile-details {
     display: grid;
-    grid-template-columns: 25% 74%;
-    grid-gap: 10px;
+    grid-template-columns: 30% 70%;
+
 }
 
 .profileImage {
     border: 5px solid white;
-    width: 70%;
-    height: 180px;
+    width: 80%;
+    height: 300px;
     margin: 10px auto;
     box-shadow: 1px 1px 1px 1px rgb(226, 178, 178);
 }
