@@ -89,7 +89,7 @@ const AddStudent = () => {
         }
 
         console.log(studentFormData);
-        fetch('https://backendadmin.vercel.app/addStudent', {
+        fetch('http://localhost:5000/addStudent', {
             method: 'POST',
             headers: {
                 'content-type': 'Application/json'

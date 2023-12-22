@@ -1,6 +1,42 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './DebitCredit.css'
+
+
+
+
 const DebitCredit = () => {
+    const [method, getMethod] = useState('')
+    const [detailsc, getDetailsc] = useState('')
+    const [amtv, getAmtv] = useState('')
+    const [pdatev, getPdatev] = useState('')
+
+
+    const getmethod = (e) => {
+        getMethod(e.target.value);
+    }
+    const getdetails = (e) => {
+        getDetailsc(e.target.value);
+    }
+    const getamt = (e) => {
+        getAmtv(e.target.value);
+    }
+    const getpdate = (e) => {
+        getPdatev(e.target.value);
+    }
+
+
+
+
+    const debitcreditbtn = () => {
+        const dcoutput = {
+            'method': method,
+            'details': detailsc,
+            'amout': amtv,
+            'date': pdatev
+        }
+        console.log(dcoutput);
+    }
+
     return (
         <div>
             <section style={{ display: 'grid', gridTemplateColumns: '20% 80%', gridGap: '10px' }}>
@@ -10,26 +46,26 @@ const DebitCredit = () => {
                         <p style={{ margin: '15% 0 0 0 ' }}>Per Month Calculation </p><hr />
                         <div>
                             <label htmlFor="">Method: </label><br />
-                            <select name="" id="" style={{ width: '100%', height: '40px' }}>
-                                <option value="Select First">Select First</option>
+                            <select name="method" id="" style={{ width: '100%', height: '40px' }} onChange={getmethod}>
+                                <option value="Select First" selected>Select First</option>
                                 <option value="Earn">Earn</option>
                                 <option value="Cost">Cost</option>
                             </select>
                         </div>
                         <div>
                             <label htmlFor="">Details</label><br />
-                            <input type="text" placeholder='Enter Details' style={{ width: '100%', height: '40px' }} />
+                            <input onChange={getdetails} type="text" placeholder='Enter Details' style={{ width: '100%', height: '40px' }} />
                         </div>
                         <div>
                             <label htmlFor="">Amount</label><br />
-                            <input type="text" placeholder='Enter Amount' style={{ width: '100%', height: '40px' }} />
+                            <input onChange={getamt} type="text" placeholder='Enter Amount' style={{ width: '100%', height: '40px' }} />
                         </div>
                         <div>
                             <label htmlFor="">Choose Date</label><br />
-                            <input type="date" name="" id="" style={{ width: '100%', height: '40px' }} />
+                            <input onChange={getpdate} type="date" name="" id="" style={{ width: '100%', height: '40px' }} pattern="\d{4}-\d{2}-\d{2}" />
                         </div>
                         <div>
-                            <button style={{ width: '100%', height: '40px', marginTop: '4%', backgroundColor: '#002B5B', color: 'white', fontSize: '20px', border: 'none', borderRadius: '5px' }}>Add</button>
+                            <button onClick={debitcreditbtn} style={{ width: '100%', height: '40px', marginTop: '4%', backgroundColor: '#002B5B', color: 'white', fontSize: '20px', border: 'none', borderRadius: '5px' }}>Add</button>
                         </div>
                     </div>
                 </div>

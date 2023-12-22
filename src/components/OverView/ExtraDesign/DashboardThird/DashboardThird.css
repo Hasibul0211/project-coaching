@@ -1,0 +1,42 @@
+.topHeader {
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: #252B48;
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
+    width: 40%;
+    margin: 10px auto;
+    outline: 5px solid #252B48;
+    outline-offset: 2px;
+}
+
+.getp {
+    font-family: cursive;
+    width: 20%;
+    height: 50px;
+    color: white;
+    background-color: #252B48;
+    outline: 3px solid #252B48;
+    outline-offset: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.getp p {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.getp :hover {
+
+
+    background-color: black;
+    transition: all 1s;
+}

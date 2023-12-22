@@ -14,7 +14,7 @@ const StudentDetails = () => {
             .then(data => setStuDet(data))
     }, [setStuDet])
 
-    stuDet.map(da => console.log(da))
+    // stuDet.map(da => console.log(da))
 
     const deleteBtn = () => {
 
@@ -99,7 +99,7 @@ const StudentDetails = () => {
 
                     </div>
 
-                    <div className='pftbtns1'>
+                    <div className='pftbtns1' >
                         <button style={{ borderRadius: '10px', border: 'none', padding: '5px', width: '60px', backgroundColor: 'green', cursor: 'pointer' }}>
                             <Link to={da._id} style={{ textDecoration: 'none', color: "white", fontFamily: 'cursive' }}>View</Link>
                         </button>

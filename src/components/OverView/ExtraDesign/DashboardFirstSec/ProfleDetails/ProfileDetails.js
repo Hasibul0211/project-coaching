@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProfileDetails.css';
 import { Link, useParams } from 'react-router-dom';
 import profile from "../../../../../photos/profile.jpg"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Box, Tab, Tabs, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
+
+
+
+
 const ProfileDetails = () => {
 
     let { id } = useParams()
-    console.log(id);
 
     const [img, setImg] = useState(profile)
-
 
     const uploadImage = (e) => {
         const read = new FileReader();
@@ -24,7 +26,20 @@ const ProfileDetails = () => {
         }
     }
 
+    const [singStu, setSingStu] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:5000/getAddStudent")
+            .then(res => res.json())
+            .then(data => setSingStu(data))
+
+    }, [])
+
+    const skdt = singStu.filter(eleme => eleme._id === id);
+    console.log(skdt[0]?.name);
     // tab code
+
+
 
     function TabPanel(props) {
         const { children, value, index, ...other } = props;
@@ -64,6 +79,10 @@ const ProfileDetails = () => {
         setValue(newValue);
     };
 
+    // get single student here 
+
+
+
 
 
 
@@ -86,22 +105,22 @@ const ProfileDetails = () => {
                 </div>
                 <div>
                     <div className='stu-nam-cl'>
-                        <p>Name: Md Hasibul Hasan</p>
+                        <p>Name: {skdt[0]?.name}</p>
                     </div>
                     <div className='stu-pic-cl'>
                         <div>
-                            <p>ID:23091525</p>
+                            <p>ID:{skdt[0]?.sId}</p>
                         </div>
                         <div>
-                            <p>Class: Ten</p>
+                            <p>Class: {skdt[0]?.class}</p>
                         </div>
                         <div>
-                            <p>Fees:2000</p>
+                            <p>Fees:{skdt[0]?.fees}</p>
 
                         </div>
                     </div>
                     <div className='stu-cnt-cl'>
-                        <p>Contact: 01626205938</p>
+                        <p>Contact: {skdt[0]?.fatherMobile}</p>
                     </div>
                     {/* tab section  */}
                     <section style={{ marginTop: '10px' }}>
@@ -117,18 +136,18 @@ const ProfileDetails = () => {
 
                             {/* academic info  */}
                             <TabPanel value={value} index={0}>
-                                <div style={{ backgroundColor: 'white', margin: '0', display: 'grid', gridTemplateColumns: '33% 33% 33%', padding: '5px' }}>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px' }}>Class: BSc</p>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px' }}>Group: Science</p>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px' }}>Id: 0920754666</p>
+                                <div style={{ backgroundColor: '#E1ECC8', margin: '0', display: 'grid', gridTemplateColumns: '33% 33% 33%', padding: '5px' }}>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Class: BSc</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Group: Science</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Id: 0920754666</p>
 
                                 </div>
-                                <div style={{ backgroundColor: '#E1ECC8', padding: '2px' }}>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', }}>Institute Name: World University of Bangladesh</p>
+                                <div style={{ backgroundColor: 'white', padding: '2px' }}>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Institute Name: World University of Bangladesh</p>
                                 </div>
 
                                 <div style={{ backgroundColor: '#E1ECC8', padding: '2px' }}>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', }}>Fees: 2000 BDT</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Fees: 2000 BDT</p>
                                 </div>
 
                             </TabPanel>
@@ -136,19 +155,19 @@ const ProfileDetails = () => {
                             {/* personal info  */}
                             <TabPanel value={value} index={1}>
                                 <div style={{ backgroundColor: '#E1ECC8', margin: '0', display: 'grid', gridTemplateColumns: '50% 50%', padding: '5px' }}>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px' }}>Father's Name: Md Joynal Abedin</p>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', marginLeft: '20%' }}>Mobile: 01626205938</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Father's Name: Md Joynal Abedin</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', marginLeft: '20%', fontFamily: 'cursive' }}>Mobile: 01626205938</p>
                                 </div>
                                 <div style={{ backgroundColor: 'white', margin: '0', display: 'grid', gridTemplateColumns: '50% 50%', padding: '5px' }}>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px' }}>Mother's Name: Mst Parvin</p>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', marginLeft: '20%' }}>Mobile: 01626205938</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Mother's Name: Mst Parvin</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', marginLeft: '20%', fontFamily: 'cursive' }}>Mobile: 01626205938</p>
                                 </div>
                                 <div style={{ backgroundColor: '#E1ECC8', margin: '0', display: 'grid', gridTemplateColumns: '50% 50%', padding: '5px' }}>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px' }}>Local Guardian: Mst Parvin</p>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', marginLeft: '20%' }}>Mobile: 01626205938</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Local Guardian: Mst Parvin</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', marginLeft: '20%', fontFamily: 'cursive' }}>Mobile: 01626205938</p>
                                 </div>
                                 <div style={{ backgroundColor: 'white', padding: '2px' }}>
-                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', }}>Address: Modinapara</p>
+                                    <p style={{ margin: '0', color: '#213363', fontWeight: '600', fontSize: '15px', fontFamily: 'cursive' }}>Address: Modinapara</p>
                                 </div>
                             </TabPanel>
 
