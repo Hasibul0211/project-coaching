@@ -1,7 +1,7 @@
 .data-sheet-head {
     display: grid;
-    grid-template-columns: 15% 29% 14% 14% 14% 14%;
-    width: 100%;
+    grid-template-columns: 20% 35% 15% 15% 15%;
+    width: 90%;
     margin: 2px auto;
     background-color: #002B5B;
 }
@@ -14,12 +14,14 @@
     color: white;
     padding: 5px;
     font-size: 15px;
+    font-family: cursive;
+    font-weight: bold;
 }
 
 .data-sheet-data {
     display: grid;
-    grid-template-columns: 15% 29% 14% 14% 14% 14%;
-    width: 100%;
+    grid-template-columns: 20% 35% 15% 15% 15%;
+    width: 90%;
     margin: 2px auto;
     background-color: #FAEBD7;
 }
@@ -30,4 +32,24 @@
     width: 100%;
     padding: 3px;
     font-size: 13px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.dchead {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3%;
+    align-items: center;
+}
+
+.dchead div {
+    border: 1px solid black;
+    width: 240px;
+    border-radius: 5px;
+    font-family: cursive;
+    font-weight: bold;
+    background-color: #002B5B;
+    color: white;
+    padding: 3px;
 }

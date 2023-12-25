@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './DebitCredit.css'
-
+import Swal from 'sweetalert2';
 
 
 
@@ -24,18 +24,92 @@ const DebitCredit = () => {
         getPdatev(e.target.value);
     }
 
-
-
-
     const debitcreditbtn = () => {
+        const monthname = new Date().toLocaleString('default', { month: 'long' })
+        const yearname = new Date().getFullYear()
         const dcoutput = {
             'method': method,
             'details': detailsc,
             'amout': amtv,
-            'date': pdatev
+            'date': pdatev,
+            'month': monthname,
+            'year': yearname
         }
         console.log(dcoutput);
+        fetch('http://localhost:5000/debitcredit', {
+            method: 'POST',
+            headers: {
+                'content-type': 'Application/json'
+            },
+            body: JSON.stringify(dcoutput)
+        }).then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: 'top-center',
+                        width: 300,
+                        fontSize: '20px',
+                        padding: '1em',
+                        color: '#716add',
+                        icon: 'success',
+                        backgroundColor: 'black',
+                        title: 'Successfully added',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+                else {
+                    alert('something wrong')
+                }
+            })
     }
+
+
+    const [dcd, setdcd] = useState([])
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/debitcredit')
+            .then(res => res.json())
+            .then(data => setdcd(data))
+    }, [])
+
+    const [ebalance, setEbalance] = useState(0)
+    const [cbalance, setCbalance] = useState(0)
+
+    useEffect(() => {
+        let earnSum = 0
+        for (let i = 0; i < dcd.length; i++) {
+            if (dcd[i].method === 'Earn') {
+                setEbalance(earnSum += parseInt(dcd[i].amout));
+            }
+        }
+        let costSum = 0
+        for (let i = 0; i < dcd.length; i++) {
+            if (dcd[i].method === 'Cost') {
+                setCbalance(costSum += parseInt(dcd[i].amout));
+            }
+        }
+    }, [useState(0)])
+
+
+    useEffect(() => {
+
+
+    }, [])
+
+    // dcd.forEach(dccd => {
+    //     if (dccd.method === 'Earn') {
+    //         totalBalace += dccd.amout
+    //     }
+    //     let Balace = parseInt(dccd.amout)
+    //     totalBalace = Balace
+    //     console.log(Balace);
+    // })
+
+    console.log('this is length',);
+
+
 
     return (
         <div>
@@ -70,7 +144,20 @@ const DebitCredit = () => {
                     </div>
                 </div>
                 <div>
+                    <div className='dchead'>
+                        <div>
+                            <p>Total Earn : {ebalance}</p>
+                        </div>
+                        <div>
+                            <p>Tatal Expenss : {cbalance}</p>
+                        </div>
+                        <div>
+                            <p>Net Balance: {ebalance - cbalance}</p>
+                        </div>
+
+                    </div>
                     <p style={{ textAlign: 'center', marginTop: '3%', fontWeight: 'bold' }}>Data Sheet</p>
+
 
                     <div className='data-sheet-head'>
                         <div>
@@ -88,314 +175,34 @@ const DebitCredit = () => {
                         <div>
                             <p>Cost</p>
                         </div>
-                        <div>
-                            <p>Balance</p>
-                        </div>
                     </div>
 
+                    {
+                        dcd.map(dcdb => <div className='data-sheet-data'>
+                            <div>
+                                <p>{dcdb.date}</p>
+                            </div>
+                            <div>
+                                <p>{dcdb.details}</p>
+                            </div>
+                            <div>
+                                <p>{dcdb.amout}</p>
+                            </div>
+                            <div>
 
+                                <p> {
+                                    dcdb.method === 'Earn' ? dcdb.amout : 0
+                                }</p>
+                            </div>
+                            <div>
+                                <p>{
+                                    dcdb.method === 'Cost' ? dcdb.amout : 0
+                                }</p>
+                            </div>
 
+                        </div>)
+                    }
 
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
-                    <div className='data-sheet-data'>
-                        <div>
-                            <p>12.05.23</p>
-                        </div>
-                        <div>
-                            <p>House Rent</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>00</p>
-                        </div>
-                        <div>
-                            <p>10000</p>
-                        </div>
-                        <div>
-                            <p>-10000</p>
-                        </div>
-                    </div>
                 </div>
             </section>
         </div>
