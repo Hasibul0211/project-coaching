@@ -1,7 +1,48 @@
-.profit-calculate-sec {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5%;
+.teacherfeesec {
+    width: 100%;
+    background-color: #002B5B;
+    padding: 5px;
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 25% 12% 10% 8% 15% 8% 8% 7% 7%;
+}
+
+.teacherfeesec div {
+
+    padding: 5px;
+}
+
+.teacherfeesec div p {
+    margin: 0;
+    font-size: 15px;
+    font-family: cursive;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.teacherfeesecdata {
+    width: 100%;
+    background-color: #1b5291;
+
+    padding: 5px;
+    border-top: 1px solid white;
+    display: grid;
+    grid-template-columns: 25% 12% 10% 8% 15% 8% 8% 7% 7%;
+}
+
+.teacherfeesecdata div {
+
+    padding: 5px;
+}
+
+.teacherfeesecdata div p {
+    margin: 0;
+    font-size: 15px;
+    font-family: cursive;
+    font-weight: bold;
+    color: white;
+    text-align: center;
 }
 
 .profit-calculate-sec-part {

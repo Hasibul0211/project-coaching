@@ -89,23 +89,26 @@ const StudentDetails = () => {
                         </p>
 
                     </div>
+
                     <div>
-                        <div>
-                            <p>
-                                {da.fatherMobile}
-                            </p>
-
-                        </div>
+                        <p>
+                            {da.fatherMobile}
+                        </p>
 
                     </div>
 
-                    <div className='pftbtns1' >
-                        <button style={{ borderRadius: '10px', border: 'none', padding: '5px', width: '60px', backgroundColor: 'green', cursor: 'pointer' }}>
-                            <Link to={da._id} style={{ textDecoration: 'none', color: "white", fontFamily: 'cursive' }}>View</Link>
-                        </button>
+
+
+                    <div>
+                        <p style={{ backgroundColor: 'green', borderRadius: '5px', margin: '0 4px' }}>
+                            <Link to={da._id} style={{ textDecoration: 'none', color: "white" }}>View</Link>
+                        </p>
                     </div>
-                    <div className='pftbtns1'>
-                        <button onClick={deleteBtn} style={{ borderRadius: '10px', border: 'none', padding: '5px', width: '60px', backgroundColor: 'red', color: "white", fontFamily: 'cursive', cursor: 'pointer' }}>Delete</button>
+                    <div>
+                        <p style={{ backgroundColor: 'green', borderRadius: '5px', margin: '0 4px' }} onClick={deleteBtn}>
+                            Delete
+                        </p>
+
                     </div>
 
 

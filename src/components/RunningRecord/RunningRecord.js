@@ -40,125 +40,345 @@ const RunningEarning = () => {
 
     return (
         <div>
-            <section className='profit-calculate-sec'>
-                <div className='profit-calculate-sec-part'>
-                    <p>Total Earnings</p>
-                    <p>40000</p>
-                </div>
-                <div className='profit-calculate-sec-part'>
-                    <p>Total Expeness</p>
-                    <p>20000</p>
-                </div>
-                <div className='profit-calculate-sec-part'>
-                    <p>Profit</p>
-                    <p>20000</p>
-                </div>
-            </section>
             <hr />
-            <section>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <p style={{ fontFamily: "cursive", fontWeight: 'bold' }}>Teacher's Payment</p>
-                    <button style={{ height: '35px', marginTop: '2%', backgroundColor: 'tomato', border: '0', padding: '5px', fontFamily: "cursive", fontWeight: 'bold', borderRadius: '5px', cursor: 'pointer' }} onClick={handleOpen}>Make Payment</button>
+            <hr />
+            <hr />
+            <section className='teacherfeesec'>
+                <div>
+                    <p>Teacher's Name</p>
+                </div>
+                <div>
+                    <p>Phone</p>
+                </div>
+                <div>
+                    <p>
+                        Total Class
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Fees/C
+                    </p>
                 </div>
 
-                <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                            Make Payment for Individual Teacher
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            <div style={{ paddingTop: '10px' }}>
-
-                                <label htmlFor="">Select Teacher:</label>
-                                <select style={{ width: '130px', height: '40px', marginRight: '5px' }}>
-                                    <option value="Please Select">Please Select</option>
-                                    <option value="Raj Sir">Raj Sir</option>
-                                    <option value="Sakib Sir">Sakib Sir</option>
-                                    <option value="Sohel Sir">Sohel Sir</option>
-                                    <option value="Shanto Sir">Shanto Sir</option>
-                                    <option value="Masum Sir">Masum Sir</option>
-                                    <option value="Pranto Sir">Pranto Sir</option>
-                                    <option value="Eva Madam">Eva Madam</option>
-                                    <option value="Smrity Madam">Smrity Madam</option>
-                                </select>
-                                <label htmlFor="">Select Month:</label>
-                                <select name="" id="" style={{ width: '100px', height: '40px', marginRight: '5px' }}>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="Octobor">Octobor</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
-                                </select>
-                                <label htmlFor="">Amount:</label>
-                                <input type="text" placeholder='Enter Amount' style={{ width: '120px', height: '40px', marginRight: '5px' }} />
-                                <button style={{ height: '40px', width: '200px' }} onClick={makePayment}>
-
-                                    {
-                                        paym ? 'Done' : 'Procced to Payment'
-                                    }
-                                </button>
-                            </div>
-
-
-                        </Typography>
-                    </Box>
-                </Modal>
-
-
-
-
-
-
-                <div className='earning-teacher-payment'>
-
-
-                    <div className='earning-teacher-payment-part'>
-                        <p>Raj Sir</p>
-                        <p>Amount: 2200</p>
-                    </div>
-                    <div className='earning-teacher-payment-part'>
-                        <p>Sohel Sir</p>
-                        <p>Amount: 2000</p>
-                    </div>
-                    <div className='earning-teacher-payment-part'>
-                        <p>Shanto Sir</p>
-                        <p>Amount: 2000</p>
-                    </div>
-                    <div className='earning-teacher-payment-part'>
-                        <p>Sakib Sir</p>
-                        <p>Amount: 4000</p>
-                    </div>
-                    <div className='earning-teacher-payment-part'>
-                        <p>Masum Sir</p>
-                        <p>Amount: 4000</p>
-                    </div>
-                    <div className='earning-teacher-payment-part'>
-                        <p>Pranto Sir</p>
-                        <p>Amount: 2800</p>
-                    </div>
-                    <div className='earning-teacher-payment-part'>
-                        <p>Smrity Madam</p>
-                        <p>Amount: 2000</p>
-                    </div>
-                    <div className='earning-teacher-payment-part'>
-                        <p>Eva Madam</p>
-                        <p>Amount: 1500</p>
-                    </div>
+                <div>
+                    <p>Total Amount</p>
+                </div>
+                <div>
+                    <p>Advance</p>
+                </div>
+                <div>
+                    <p>Dues</p>
+                </div>
+                <div>
+                    <p>ADD</p>
+                </div>
+                <div>
+                    <p>Status</p>
                 </div>
             </section>
+            <section className='teacherfeesecdata'>
+                <div>
+                    <p>Md Hasibul Hasan</p>
+                </div>
+                <div>
+                    <p>01626205938</p>
+                </div>
+                <div>
+                    <p>
+                        24
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        110
+                    </p>
+                </div>
+
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                </div>
+            </section >
+            <section className='teacherfeesecdata'>
+                <div>
+                    <p>Md Hasibul Hasan</p>
+                </div>
+                <div>
+                    <p>01626205938</p>
+                </div>
+                <div>
+                    <p>
+                        24
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        110
+                    </p>
+                </div>
+
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                </div>
+            </section >
+            <section className='teacherfeesecdata'>
+                <div>
+                    <p>Md Hasibul Hasan</p>
+                </div>
+                <div>
+                    <p>01626205938</p>
+                </div>
+                <div>
+                    <p>
+                        24
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        110
+                    </p>
+                </div>
+
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                </div>
+            </section >
+            <section className='teacherfeesecdata'>
+                <div>
+                    <p>Md Hasibul Hasan</p>
+                </div>
+                <div>
+                    <p>01626205938</p>
+                </div>
+                <div>
+                    <p>
+                        24
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        110
+                    </p>
+                </div>
+
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                </div>
+            </section >
+            <section className='teacherfeesecdata'>
+                <div>
+                    <p>Md Hasibul Hasan</p>
+                </div>
+                <div>
+                    <p>01626205938</p>
+                </div>
+                <div>
+                    <p>
+                        24
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        110
+                    </p>
+                </div>
+
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                </div>
+            </section >
+            <section className='teacherfeesecdata'>
+                <div>
+                    <p>Md Hasibul Hasan</p>
+                </div>
+                <div>
+                    <p>01626205938</p>
+                </div>
+                <div>
+                    <p>
+                        24
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        110
+                    </p>
+                </div>
+
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                </div>
+            </section >
+            <section className='teacherfeesecdata'>
+                <div>
+                    <p>Md Hasibul Hasan</p>
+                </div>
+                <div>
+                    <p>01626205938</p>
+                </div>
+                <div>
+                    <p>
+                        24
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        110
+                    </p>
+                </div>
+
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p>2500</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                </div>
+                <div>
+                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                </div>
+            </section >
+            {/* modal first  */}
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        Make Payment for Individual Teacher
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <div style={{ paddingTop: '10px' }}>
+
+                            <label htmlFor="">Select Teacher:</label>
+                            <select style={{ width: '130px', height: '40px', marginRight: '5px' }}>
+                                <option value="Please Select">Please Select</option>
+                                <option value="Raj Sir">Raj Sir</option>
+                                <option value="Sakib Sir">Sakib Sir</option>
+                                <option value="Sohel Sir">Sohel Sir</option>
+                                <option value="Shanto Sir">Shanto Sir</option>
+                                <option value="Masum Sir">Masum Sir</option>
+                                <option value="Pranto Sir">Pranto Sir</option>
+                                <option value="Eva Madam">Eva Madam</option>
+                                <option value="Smrity Madam">Smrity Madam</option>
+                            </select>
+                            <label htmlFor="">Select Month:</label>
+                            <select name="" id="" style={{ width: '100px', height: '40px', marginRight: '5px' }}>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="Octobor">Octobor</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                            <label htmlFor="">Amount:</label>
+                            <input type="text" placeholder='Enter Amount' style={{ width: '120px', height: '40px', marginRight: '5px' }} />
+                            <button style={{ height: '40px', width: '200px' }} onClick={makePayment}>
+
+                                {
+                                    paym ? 'Done' : 'Procced to Payment'
+                                }
+                            </button>
+                        </div>
+
+
+                    </Typography>
+                </Box>
+            </Modal>
+
+            {/* modal first end here  */}
+
+
+
+
+            <hr />
+
             <hr />
             <section>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -264,7 +484,7 @@ const RunningEarning = () => {
 
                 </div>
             </section>
-        </div>
+        </div >
     );
 };
 

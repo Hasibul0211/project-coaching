@@ -16,16 +16,14 @@
 
     .detailsHeader {
         display: grid;
-        grid-template-columns: 10% 40% 15% 15% 10% 10%;
-
+        grid-template-columns: 15% 35% 15% 15% 10% 10%;
         border: 1px solid #002B5B;
         text-align: center;
-        grid-gap: 5px;
         margin-top: 5px;
         background-color: #002B5B;
         color: white;
-        padding: 5px 5%;
-        font-size: 14px;
+        padding: 6px;
+        font-size: 15px;
         text-transform: capitalize;
         font-family: cursive;
         font-weight: bold;
@@ -35,13 +33,12 @@
     .detailsBody {
         display: grid;
         grid-template-columns: 15% 35% 15% 15% 10% 10%;
-        text-align: left;
-        grid-gap: 8px;
-        margin-top: 5px;
-        background-color: rgb(250, 232, 209);
+        text-align: center;
+        margin-top: 1px;
+        background-color: #1b5291;
         color: black;
         font-weight: bold;
-        padding: 5px 3%;
+        padding: 6px;
         font-size: 13px;
         text-transform: capitalize;
 
@@ -50,10 +47,12 @@
 
 
     .detailsBody div p {
-        padding: 5px;
+        padding: 4px;
         margin: 0;
-        text-align: start;
+        text-align: center;
         font-family: cursive;
+        color: white;
+
     }
 
 }
