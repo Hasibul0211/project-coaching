@@ -24,6 +24,9 @@ const DebitCredit = () => {
         getPdatev(e.target.value);
     }
 
+    const currentMonth = new Date().toLocaleString('default', { month: 'long' })
+    const currentYear = new Date().getFullYear()
+
     const debitcreditbtn = () => {
         const monthname = new Date().toLocaleString('default', { month: 'long' })
         const yearname = new Date().getFullYear()
@@ -71,8 +74,18 @@ const DebitCredit = () => {
     useEffect(() => {
         fetch('http://localhost:5000/debitcredit')
             .then(res => res.json())
-            .then(data => setdcd(data))
+            .then(data => {
+
+                const fdata = data.filter(dckk => dckk.month === currentMonth && dckk.year === currentYear)
+
+                setdcd(fdata)
+            })
     }, [])
+
+    console.log(dcd);
+
+
+
 
     const [ebalance, setEbalance] = useState(0)
     const [cbalance, setCbalance] = useState(0)
@@ -107,7 +120,6 @@ const DebitCredit = () => {
     //     console.log(Balace);
     // })
 
-    console.log('this is length',);
 
 
 
@@ -156,7 +168,7 @@ const DebitCredit = () => {
                         </div>
 
                     </div>
-                    <p style={{ textAlign: 'center', marginTop: '3%', fontWeight: 'bold' }}>Data Sheet</p>
+                    <p style={{ textAlign: 'center', marginTop: '3%', fontWeight: 'bold' }}>Data Sheet of {currentMonth},{currentYear}</p>
 
 
                     <div className='data-sheet-head'>
@@ -178,25 +190,25 @@ const DebitCredit = () => {
                     </div>
 
                     {
-                        dcd.map(dcdb => <div className='data-sheet-data'>
+                        dcd.map(gfd => <div className='data-sheet-data'>
                             <div>
-                                <p>{dcdb.date}</p>
+                                <p>{gfd.month === currentMonth && gfd.year === currentYear ? gfd.month : 0}</p>
                             </div>
                             <div>
-                                <p>{dcdb.details}</p>
+                                <p>{gfd.month === currentMonth && gfd.year === currentYear ? gfd.details : ''}</p>
                             </div>
                             <div>
-                                <p>{dcdb.amout}</p>
+                                <p>{gfd.month === currentMonth && gfd.year === currentYear ? gfd.amout : 0}</p>
                             </div>
                             <div>
 
                                 <p> {
-                                    dcdb.method === 'Earn' ? dcdb.amout : 0
+                                    gfd.month === currentMonth && gfd.year === currentYear && gfd.method === 'Earn' ? gfd.amout : 0
                                 }</p>
                             </div>
                             <div>
                                 <p>{
-                                    dcdb.method === 'Cost' ? dcdb.amout : 0
+                                    gfd.month === currentMonth && gfd.year === currentYear && gfd.method === 'Cost' ? gfd.amout : 0
                                 }</p>
                             </div>
 

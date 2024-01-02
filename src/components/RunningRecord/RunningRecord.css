@@ -23,10 +23,10 @@
 
 .teacherfeesecdata {
     width: 100%;
-    background-color: #1b5291;
+    background-color: #FAEBD7;
 
     padding: 5px;
-    border-top: 1px solid white;
+    border-top: 1px solid rgb(107, 25, 25);
     display: grid;
     grid-template-columns: 25% 12% 10% 8% 15% 8% 8% 7% 7%;
 }
@@ -41,7 +41,7 @@
     font-size: 15px;
     font-family: cursive;
     font-weight: bold;
-    color: white;
+    color: black;
     text-align: center;
 }
 

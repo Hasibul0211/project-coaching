@@ -20,6 +20,7 @@ import Books from "./components/Books/Books";
 import LectureSheet from "./components/LectureSheet/LectureSheet";
 import Login from "./components/LoginPage/Login";
 import DashboarFirst from "./components/OverView/ExtraDesign/DashboardFirstSec/DashboarFirst";
+import TeacherDeModal from "./components/MoreComponents/TeacherDeModal/TeacherDeModal";
 
 
 function App() {
@@ -41,7 +42,12 @@ function App() {
         <Route path="totalearn" element={<RunningRecord></RunningRecord>}></Route>
         <Route path="debitcredit" element={<DebitCredit></DebitCredit>}></Route>
         <Route path="pastrecord" element={<PastRecord></PastRecord>}></Route>
-        <Route path="teacherdetails" element={<TeacherDetails></TeacherDetails>}></Route>
+        <Route path="teacherdetails" element={<TeacherDetails></TeacherDetails>}>
+          <Route path='/dashboard/teacherdetails/:id' element={<TeacherDeModal></TeacherDeModal>} />
+        </Route>
+
+
+
         <Route path="addteacher" element={<AddTeacher></AddTeacher>}></Route>
         <Route path="authordetail" element={<AuthorDetails></AuthorDetails>}></Route>
         <Route path="addauthor" element={<AddAuthor></AddAuthor>}></Route>

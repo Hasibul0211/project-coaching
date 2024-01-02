@@ -6,7 +6,7 @@ const TotalStudentApi = () => {
 
 
     useEffect(() => {
-        fetch('https://projectcoachingbackenda.vercel.app/addStudent')
+        fetch('http://localhost:5000/getAddStudent')
             .then(res => res.json())
             .then(data => setStuTotal(data))
     }, [])
