@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './RunningRecord.css'
 import { Box, Modal, Typography } from '@mui/material';
-
-
+import TeacherPaymentApi from '../API/TeacherPaymentApi';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Swal from 'sweetalert2';
 
 const style = {
     position: 'absolute',
@@ -20,13 +21,14 @@ const style = {
 
 const RunningEarning = () => {
 
-
+    const [toTePay, setToTePay] = TeacherPaymentApi()
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [openTwo, setOpenTwo] = React.useState(false);
     const handleOpenTwo = () => setOpenTwo(true);
     const handleCloseTwo = () => setOpenTwo(false);
+
 
 
     const [paym, setPaym] = useState(false)
@@ -38,11 +40,61 @@ const RunningEarning = () => {
         setWithRet(true)
     }
 
+    const currentMonth = new Date().toLocaleString('default', { month: 'long' })
+    const currentYear = new Date().getFullYear()
+
+
+
+    const handleDelete = (id) => {
+        console.log(id);
+        fetch(`http://localhost:5000/teacherPayment/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    Swal.fire({
+                        position: 'top-center',
+                        width: 500,
+                        fontSize: '20px',
+                        padding: '1em',
+                        color: '#716add',
+                        icon: 'success',
+                        backgroundColor: 'black',
+                        title: 'Successfully deleted',
+                        showConfirmButton: false,
+                        timer: 1800
+                    })
+                    const remPayTeacher = toTePay.filter(remFilt => remFilt._id !== id)
+                    setToTePay(remPayTeacher)
+                }
+                else {
+                    Swal.fire({
+                        position: 'top-center',
+                        width: 500,
+                        fontSize: '20px',
+                        padding: '1em',
+                        color: '#716add',
+                        icon: 'success',
+                        backgroundColor: 'black',
+                        title: 'Somthing went wrong',
+                        showConfirmButton: false,
+                        timer: 1800
+                    })
+                }
+            })
+
+
+    }
+
+
+
     return (
         <div>
             <hr />
 
             <hr />
+            <p style={{ margin: '0', fontWeight: 'bold', fontFamily: 'cursive', fontSize: '14px' }}>Record of {currentMonth},{currentYear}</p>
             <hr />
             <section className='teacherfeesec'>
                 <div>
@@ -77,245 +129,54 @@ const RunningEarning = () => {
                 <div>
                     <p>Status</p>
                 </div>
+                <div>
+
+
+
+                </div>
             </section>
-            <section className='teacherfeesecdata'>
-                <div>
-                    <p>Md Hasibul Hasan</p>
-                </div>
-                <div>
-                    <p>01626205938</p>
-                </div>
-                <div>
-                    <p>
-                        24
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        110
-                    </p>
-                </div>
+            {
+                toTePay.map(teacherPaymentRec => <section className='teacherfeesecdata'>
+                    <div>
+                        <p>{teacherPaymentRec.teacherName}</p>
+                    </div>
+                    <div>
+                        <p>{teacherPaymentRec.number}</p>
+                    </div>
+                    <div>
+                        <p>
+                            {teacherPaymentRec.totalClass}
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            {teacherPaymentRec.perClassFee}
+                        </p>
+                    </div>
 
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
-                </div>
-            </section >
-            <section className='teacherfeesecdata'>
-                <div>
-                    <p>Md Hasibul Hasan</p>
-                </div>
-                <div>
-                    <p>01626205938</p>
-                </div>
-                <div>
-                    <p>
-                        24
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        110
-                    </p>
-                </div>
+                    <div>
+                        <p>{teacherPaymentRec.totalAmount}</p>
+                    </div>
+                    <div>
+                        <p>{teacherPaymentRec.feeAdvance}</p>
+                    </div>
+                    <div>
+                        <p>
+                            {teacherPaymentRec.feeDue}
+                        </p>
+                    </div>
+                    <div>
+                        <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
+                    </div>
+                    <div>
+                        <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
+                    </div>
+                    <DeleteIcon style={{ fontSize: '23px', textAlign: 'center', marginTop: '5px', marginLeft: '8px', cursor: 'pointer' }} onClick={() => handleDelete(teacherPaymentRec._id)}></DeleteIcon>
+                </section >)
+            }
 
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
-                </div>
-            </section >
-            <section className='teacherfeesecdata'>
-                <div>
-                    <p>Md Hasibul Hasan</p>
-                </div>
-                <div>
-                    <p>01626205938</p>
-                </div>
-                <div>
-                    <p>
-                        24
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        110
-                    </p>
-                </div>
 
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
-                </div>
-            </section >
-            <section className='teacherfeesecdata'>
-                <div>
-                    <p>Md Hasibul Hasan</p>
-                </div>
-                <div>
-                    <p>01626205938</p>
-                </div>
-                <div>
-                    <p>
-                        24
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        110
-                    </p>
-                </div>
 
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
-                </div>
-            </section >
-            <section className='teacherfeesecdata'>
-                <div>
-                    <p>Md Hasibul Hasan</p>
-                </div>
-                <div>
-                    <p>01626205938</p>
-                </div>
-                <div>
-                    <p>
-                        24
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        110
-                    </p>
-                </div>
-
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
-                </div>
-            </section >
-            <section className='teacherfeesecdata'>
-                <div>
-                    <p>Md Hasibul Hasan</p>
-                </div>
-                <div>
-                    <p>01626205938</p>
-                </div>
-                <div>
-                    <p>
-                        24
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        110
-                    </p>
-                </div>
-
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
-                </div>
-            </section >
-            <section className='teacherfeesecdata'>
-                <div>
-                    <p>Md Hasibul Hasan</p>
-                </div>
-                <div>
-                    <p>01626205938</p>
-                </div>
-                <div>
-                    <p>
-                        24
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        110
-                    </p>
-                </div>
-
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p>2500</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px', cursor: 'pointer' }} onClick={handleOpen}>Click</p>
-                </div>
-                <div>
-                    <p style={{ backgroundColor: 'green', borderRadius: '5px', padding: '2px' }}>Pending</p>
-                </div>
-            </section >
             {/* modal first  */}
             <Modal
                 open={open}

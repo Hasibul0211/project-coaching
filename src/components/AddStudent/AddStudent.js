@@ -88,7 +88,6 @@ const AddStudent = () => {
             subject: stuSubject.toUpperCase()
         }
 
-        console.log(studentFormData);
         fetch('http://localhost:5000/addStudent', {
             method: 'POST',
             headers: {

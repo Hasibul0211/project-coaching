@@ -122,7 +122,7 @@ const Dashboard = () => {
                     </IconButton>
                     <Box style={{ width: '80%', display: 'flex', justifyContent: 'space-between' }} className="dashhead">
                         <Typography variant="h6" noWrap component="div">
-                            Borno Academic Care
+                            Institute Name
                         </Typography>
                         {/* <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
@@ -178,7 +178,7 @@ const Dashboard = () => {
                 <Divider />
 
                 <div className='dashboardDiv'>
-                    <DashboardIcon style={{ fontSize: '17px', marginRight: '10px', color: 'white' }}></DashboardIcon>
+                    <DashboardIcon style={{ fontSize: '15px', marginRight: '10px', color: 'white' }}></DashboardIcon>
                     <Link to='/dashboard/overview' style={{ color: 'white' }}>Dashboard</Link>
                 </div>
                 <div>
@@ -190,19 +190,19 @@ const Dashboard = () => {
 
                         >
                             <div className='accordionDesign'>
-                                <PersonAddIcon style={{ fontSize: '17px', marginRight: '10px' }}></PersonAddIcon>
+                                <PersonAddIcon style={{ fontSize: '15px', marginRight: '10px' }}></PersonAddIcon>
                                 <p>Student Collection</p>
                             </div>
 
                         </AccordionSummary>
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='add-Student'>Add Student</Link>
                                 {/* <a href="addStudent" style={{ fontSize: '16px' }}>Add Student</a><br /> */}
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='student-details'>Student Info</Link>
                             </div>
                         </AccordionDetails>
@@ -217,24 +217,24 @@ const Dashboard = () => {
 
                         >
                             <div className='accordionDesign'>
-                                <LocalAtmIcon style={{ fontSize: '17px', marginRight: '10px' }}></LocalAtmIcon>
+                                <LocalAtmIcon style={{ fontSize: '15px', marginRight: '10px' }}></LocalAtmIcon>
                                 <p>Fees</p>
                             </div>
 
                         </AccordionSummary>
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='currentfees'>Current Month</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="pastfees" style={{ fontSize: '16px' }}>Previous Month</a><br />
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <a href="pastfees" style={{ fontSize: '15px' }}>Previous Month</a><br />
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="addfees" style={{ fontSize: '16px' }}>Add</a><br />
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <a href="addfees" style={{ fontSize: '15px' }}>Add</a><br />
                             </div>
                         </AccordionDetails>
                     </Accordion>
@@ -248,25 +248,25 @@ const Dashboard = () => {
 
                         >
                             <div className='accordionDesign'>
-                                <LocalAtmIcon style={{ fontSize: '17px', marginRight: '10px' }}></LocalAtmIcon>
+                                <LocalAtmIcon style={{ fontSize: '15px', marginRight: '10px' }}></LocalAtmIcon>
                                 <p>Earnings</p>
                             </div>
 
                         </AccordionSummary>
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='totalearn'>Running Record</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='debitcredit'>Debit/Credit</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="pastrecord" style={{ fontSize: '16px' }}>Previous Record</a><br />
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <a href="pastrecord" style={{ fontSize: '15px' }}>All Record</a><br />
                             </div>
 
                         </AccordionDetails>
@@ -281,20 +281,20 @@ const Dashboard = () => {
 
                         >
                             <div className='accordionDesign'>
-                                <GroupsIcon style={{ fontSize: '17px', marginRight: '10px' }}></GroupsIcon>
+                                <GroupsIcon style={{ fontSize: '15px', marginRight: '10px' }}></GroupsIcon>
                                 <p>Teachers</p>
                             </div>
 
                         </AccordionSummary>
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='teacherdetails'>Teacher's Details</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="addteacher" style={{ fontSize: '16px' }}>Add Teacher</a><br />
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <a href="addteacher" style={{ fontSize: '15px' }}>Add Teacher</a><br />
                             </div>
                         </AccordionDetails>
                     </Accordion>
@@ -308,20 +308,20 @@ const Dashboard = () => {
 
                         >
                             <div className='accordionDesign'>
-                                <GroupsIcon style={{ fontSize: '17px', marginRight: '10px' }}></GroupsIcon>
+                                <GroupsIcon style={{ fontSize: '15px', marginRight: '10px' }}></GroupsIcon>
                                 <p>Author's</p>
                             </div>
 
                         </AccordionSummary>
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='authordetail'>Author's Details</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="addauthor" style={{ fontSize: '16px' }}>Add Author</a><br />
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <a href="addauthor" style={{ fontSize: '15px' }}>Add Author</a><br />
                             </div>
                         </AccordionDetails>
                     </Accordion>
@@ -367,27 +367,27 @@ const Dashboard = () => {
 
                         >
                             <div className='accordionDesign'>
-                                <LocalLibraryIcon style={{ fontSize: '17px', marginRight: '10px' }}></LocalLibraryIcon>
+                                <LocalLibraryIcon style={{ fontSize: '15px', marginRight: '10px' }}></LocalLibraryIcon>
                                 <p>Our Library</p>
                             </div>
 
                         </AccordionSummary>
                         <AccordionDetails id='accordionDetail'>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
                                 <Link to='books'>Books</Link>
 
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '18px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
-                                <a href="sheet" style={{ fontSize: '16px' }}>Lecture Sheet</a><br />
+                                <KeyboardDoubleArrowRightIcon style={{ fontSize: '15px', marginRight: '10px' }}></KeyboardDoubleArrowRightIcon>
+                                <a href="sheet" style={{ fontSize: '15px' }}>Lecture Sheet</a><br />
                             </div>
 
                         </AccordionDetails>
                     </Accordion>
                 </div>
                 <div className='dashboardDiv' onClick={logOutBtn}>
-                    <LogoutIcon style={{ fontSize: '17px', marginRight: '10px', color: 'white' }}></LogoutIcon>
+                    <LogoutIcon style={{ fontSize: '15px', marginRight: '10px', color: 'white' }}></LogoutIcon>
                     <Link to='/dashboard/overview' style={{ color: 'white' }}>Logout</Link>
                 </div>
 

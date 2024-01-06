@@ -4,7 +4,7 @@
     padding: 5px;
     margin-top: 2%;
     display: grid;
-    grid-template-columns: 25% 12% 10% 8% 15% 8% 8% 7% 7%;
+    grid-template-columns: 21% 12% 10% 8% 15% 8% 8% 7% 7% 4%;
 }
 
 .teacherfeesec div {
@@ -14,7 +14,7 @@
 
 .teacherfeesec div p {
     margin: 0;
-    font-size: 15px;
+    font-size: 13px;
     font-family: cursive;
     font-weight: bold;
     color: white;
@@ -28,7 +28,7 @@
     padding: 5px;
     border-top: 1px solid rgb(107, 25, 25);
     display: grid;
-    grid-template-columns: 25% 12% 10% 8% 15% 8% 8% 7% 7%;
+    grid-template-columns: 21% 12% 10% 8% 15% 8% 8% 7% 7% 4%;
 }
 
 .teacherfeesecdata div {
@@ -38,7 +38,7 @@
 
 .teacherfeesecdata div p {
     margin: 0;
-    font-size: 15px;
+    font-size: 13px;
     font-family: cursive;
     font-weight: bold;
     color: black;

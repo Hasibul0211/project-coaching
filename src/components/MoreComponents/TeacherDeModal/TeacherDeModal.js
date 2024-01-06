@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './TeacherDeModal.css'
 import Box from '@mui/material/Box';
-import Backdrop from '@mui/material/Backdrop';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { Fade } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import TeacherPaymentApi from '../../API/TeacherPaymentApi';
 
 const stylem = {
     position: 'absolute',
@@ -18,9 +17,10 @@ const stylem = {
     p: 5,
 };
 
-const TeacherDeModal = ({ handleOpenm, handleClosem, openm, id }) => {
+const TeacherDeModal = ({ handleOpenm, handleClosem, openm, id, setTeacherOuput }) => {
 
     const [modalTe, setModalTe] = useState([])
+    const [toTePay] = TeacherPaymentApi()
 
     useEffect(() => {
         fetch('http://localhost:5000/addTeacher')
@@ -35,12 +35,13 @@ const TeacherDeModal = ({ handleOpenm, handleClosem, openm, id }) => {
     const [teacherFeePerFee, setTeacherFeePerFee] = useState([])
     const [classtaken, setClassTaken] = useState('')
     const [teacherFeeAmount, setTeacherFeeAmount] = useState([])
+    const [insertData, setInsertData] = useState([])
     const findModalTe = modalTe.filter(modfilda => modfilda._id === id)
 
     const totalClassGet = (e) => {
         setClassTaken(e.target.value);
     }
-    console.log('name', teacherFeeName);
+
     useEffect(() => {
         setTeacherFeeName(findModalTe[0]?.teacherName)
         setTeacherFeeNumber(findModalTe[0]?.number)
@@ -50,7 +51,62 @@ const TeacherDeModal = ({ handleOpenm, handleClosem, openm, id }) => {
 
 
 
-    console.log(findModalTe);
+    const currentMonth = new Date().toLocaleString('default', { month: 'long' })
+    const currentYear = new Date().getFullYear()
+
+
+
+    const addTeacherPaym = () => {
+        const teacherPaym = {
+            'teacherName': teacherFeeName,
+            'number': teacherFeeNumber,
+            'perClassFee': teacherFeePerFee,
+            'totalClass': classtaken,
+            'totalAmount': teacherFeeAmount,
+            'feeDue': 0,
+            'feeAdvance': 0,
+            'feesMonth': currentMonth,
+            'feesYear': currentYear,
+            'status': 'pending'
+        }
+        fetch('http://localhost:5000/teacherPayment', {
+            method: 'POST',
+            headers: {
+                'content-type': 'Application/json'
+            },
+            body: JSON.stringify(teacherPaym)
+        }).then(res => res.json())
+            .then(data => {
+                setInsertData(data)
+                if (data.insertedId) {
+                    handleClosem()
+                    Swal.fire({
+                        position: 'top-center',
+                        width: 500,
+                        fontSize: '20px',
+                        padding: '1em',
+                        color: '#716add',
+                        icon: 'success',
+                        backgroundColor: 'black',
+                        title: 'Successfully added',
+                        showConfirmButton: false,
+                        timer: 1800
+                    })
+
+                }
+                else {
+                    alert('something wrong')
+                }
+            })
+    }
+
+    const getToTePayData = toTePay.find(payingTeData => (payingTeData.teacherName === teacherFeeName))
+    setTeacherOuput(getToTePayData);
+
+
+
+
+
 
     return (
 
@@ -68,6 +124,7 @@ const TeacherDeModal = ({ handleOpenm, handleClosem, openm, id }) => {
                     </Typography>
                     <Typography id="modal-modal-description-m" sx={{ mt: 1, pb: 1 }}>
 
+
                         <div className='teacherfeeshowcls'>
                             <label htmlFor="">Name</label>
                             <input type="text" value={teacherFeeName} checked />
@@ -80,8 +137,9 @@ const TeacherDeModal = ({ handleOpenm, handleClosem, openm, id }) => {
                             <label htmlFor="">Total Amount</label>
                             <input type="text" value={teacherFeeAmount} checked />
 
-                            <button onClick={() => alert('click')}>Submit</button>
+                            <button onClick={addTeacherPaym} >Submit</button>
                         </div>
+
                     </Typography>
                 </Box>
             </Modal>
